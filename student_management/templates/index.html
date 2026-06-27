@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Dashboard Title -->
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+
+        <h2 class="fw-bold">
+            <i class="bi bi-speedometer2"></i>
+            Dashboard
+        </h2>
+
+        <p class="text-light">
+            Manage all student records easily.
+        </p>
+
+    </div>
+
+    <a href="/add" class="btn btn-success btn-lg">
+        <i class="bi bi-person-plus-fill"></i>
+        Add Student
+    </a>
+
+</div>
+
+<!-- Dashboard Cards -->
+
+<div class="dashboard">
+
+    <div class="box">
+
+        <i class="bi bi-people-fill display-4"></i>
+
+        <h3>Total Students</h3>
+
+        <h1>{{ students|length }}</h1>
+
+    </div>
+
+    <div class="box">
+
+        <i class="bi bi-book-fill display-4"></i>
+
+        <h3>Courses</h3>
+
+        <h1>5+</h1>
+
+    </div>
+
+    <div class="box">
+
+        <i class="bi bi-mortarboard-fill display-4"></i>
+
+        <h3>Management</h3>
+
+        <h1>100%</h1>
+
+    </div>
+
+</div>
+
+<!-- Search -->
+
+<form method="GET">
+
+<div class="input-group mb-4">
+
+<input
+type="text"
+class="form-control"
+name="search"
+placeholder="🔍 Search by Name, Course or Email"
+value="{{ request.args.get('search','') }}">
+
+<button class="btn btn-primary">
+
+<i class="bi bi-search"></i>
+
+Search
+
+</button>
+
+</div>
+
+</form>
+
+<!-- Table -->
+
+<div class="card shadow-lg">
+
+<div class="card-body">
+
+<table class="table table-hover align-middle">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Age</th>
+
+<th>Course</th>
+
+<th>Email</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if students %}
+
+{% for student in students %}
+
+<tr>
+
+<td>{{ student.id }}</td>
+
+<td>
+
+<i class="bi bi-person-circle text-info"></i>
+
+{{ student.name }}
+
+</td>
+
+<td>{{ student.age }}</td>
+
+<td>
+
+<span class="badge bg-primary">
+
+{{ student.course }}
+
+</span>
+
+</td>
+
+<td>{{ student.email }}</td>
+
+<td>
+
+<a href="/edit/{{ student.id }}"
+class="btn btn-warning btn-sm">
+
+<i class="bi bi-pencil-square"></i>
+
+</a>
+
+<a href="/delete/{{ student.id }}"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Delete this student?')">
+
+<i class="bi bi-trash-fill"></i>
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% else %}
+
+<tr>
+
+<td colspan="6" class="text-center">
+
+No Students Found
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+{% endblock %}

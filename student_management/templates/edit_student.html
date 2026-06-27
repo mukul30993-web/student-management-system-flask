@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-7">
+
+        <div class="card shadow-lg">
+
+            <div class="card-header bg-warning text-dark text-center">
+
+                <h3>
+
+                    <i class="bi bi-pencil-square"></i>
+
+                    Edit Student
+
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="bi bi-person-fill"></i>
+
+                            Student Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            value="{{ student.name }}"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="bi bi-calendar-fill"></i>
+
+                            Age
+
+                        </label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            value="{{ student.age }}"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="bi bi-book-fill"></i>
+
+                            Course
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="course"
+                            value="{{ student.course }}"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+
+                            <i class="bi bi-envelope-fill"></i>
+
+                            Email
+
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            value="{{ student.email }}"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+
+                        <a href="/" class="btn btn-secondary">
+
+                            <i class="bi bi-arrow-left-circle"></i>
+
+                            Cancel
+
+                        </a>
+
+                        <button class="btn btn-warning">
+
+                            <i class="bi bi-save-fill"></i>
+
+                            Update Student
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-7">
+
+        <div class="card shadow-lg">
+
+            <div class="card-header bg-success text-white text-center">
+
+                <h3>
+                    <i class="bi bi-person-plus-fill"></i>
+                    Add Student
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            <i class="bi bi-person-fill"></i>
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            placeholder="Enter Student Name"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            <i class="bi bi-calendar-fill"></i>
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            class="form-control"
+                            placeholder="Enter Age"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            <i class="bi bi-book-fill"></i>
+                            Course
+                        </label>
+
+                        <input
+                            type="text"
+                            name="course"
+                            class="form-control"
+                            placeholder="Enter Course"
+                            required>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            <i class="bi bi-envelope-fill"></i>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder="Enter Email"
+                            required>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+
+                        <a href="/" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left-circle"></i>
+                            Back
+                        </a>
+
+                        <button class="btn btn-success">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Save Student
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
