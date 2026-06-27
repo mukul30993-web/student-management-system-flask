@@ -27,7 +27,7 @@ A simple Student Management System built with Flask and SQLite.
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/student-management.git
+git clone https://github.com/mukul30993-web/student-management.git
 ```
 
 Go into the project folder
